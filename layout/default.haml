@@ -1,0 +1,33 @@
+!!! 5
+
+- ie_html :class=>'no-js' do
+
+  %head
+    %title #{@title}
+    %meta{ :content=>"text/javascript", "http-equiv"=>"Content-Script-Type" }
+    %meta{ :content=>"text/css", "http-equiv"=>"Content-Style-Type" }
+    %meta{ :content=>"text/html; charset=utf-8", "http-equiv"=>"Content-Type" }
+    %meta{ :content=>"0", "http-equiv"=>"expires" }
+    %meta{ :content=>"Description for search engines", :name=>"description" }
+    %meta{ :content=>"Ramaze #{Ramaze::VERSION}", :name=>"generator" }
+    %meta{ :content=>"Ramaze, Your own keywords", :name=>"keywords" }
+    %meta{ :content=>"#{Time.now.iso8601}", :name=>"date" }
+    
+    /[if lt IE 9]
+      %script{ :type=>"text/javascript", :src=>"/js/html5.js" }
+    
+    %script{ :type=>"text/javascript", :src=>"/js/jquery.js" }
+    %script{ :type=>"text/javascript", :src=>"/js/plugins/jquery.metadata.js" }
+    
+    %link{ :rel=>:stylesheet, :type=>"text/css", :href=>"/css/main.css" }
+
+  %body{ :class=>[page_class, :no_js] }
+    :javascript
+      jQuery("BODY").removeClass("no_js").addClass("js");
+    
+    %h1 #{@h1 || @title}
+    = @content
+    
+    %script{ :type=>"text/javascript", :src=>"/js/site.js" }
+    
+    = render_partial "shared/debug_info"

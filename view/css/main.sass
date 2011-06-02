@@ -1,0 +1,115 @@
+//-------------------------------------------------------------------------
+// Dimensions
+//-------------------------------------------------------------------------
+
+//-------------------------------------------------------------------------
+// Colors & fonts
+//-------------------------------------------------------------------------
+$COLOR_MAIN: red
+
+$FONT: Helvetica, Arial, sans-serif
+$FONT_HEADINGS: "Arial Narrow", $FONT
+
+//-------------------------------------------------------------------------
+// Mixins
+//-------------------------------------------------------------------------
+=clearfix
+  :overflow hidden
+  :display inline-block
+  &
+    :display block
+
+// TODO: use compass lib for css3 features
+=border-radius($radius)
+  :-webkit-border-radius $radius
+  :-moz-border-radius $radius
+  :-o-border-radius $radius
+  :-ms-border-radius $radius
+  :-khtml-border-radius $radius
+  :border-radius $radius
+
+/*-------------------------------------------------------------------------
+/* General
+/*-------------------------------------------------------------------------
+*
+  :-moz-box-sizing border-box
+
+BODY
+  :margin 0
+
+IMG
+  :border none
+
+HEADER, SECTION, FOOTER
+  :display block
+
+NAV
+  UL
+    :list-style none
+    :margin 0
+    :padding 0
+    LI
+      :display inline-block
+      :*display inline
+
+/*-------------------------------------------------------------------------
+/* Typography
+/*-------------------------------------------------------------------------
+BODY
+  :font 75%/1.2em $FONT
+  :color #333
+
+PRE, CODE, TT, KBD
+  :font-family 'Courier New' Courier monospace
+  :font-size 1.2em
+
+H1, H2
+  :font-family $FONT_HEADINGS
+
+P, UL, OL, DL
+  :margin 1.4em 0
+
+EM
+  :font-style normal
+
+HR
+  :height 1px
+  :border none
+  :border-bottom 1px solid #666
+
+.hidden
+  :display none
+
+/*-------------------------------------------------------------------------
+/* Structure
+/*-------------------------------------------------------------------------
+
+/*-------------------------------------------------------------------------
+/* Icons
+/*-------------------------------------------------------------------------
+.icon
+  :padding-left 18px
+  :background no-repeat left center
+
+/*-------------------------------------------------------------------------
+/* Buttons
+/*-------------------------------------------------------------------------
+.button
+  :padding .3em 1.2em
+  +border-radius(1em)
+  :line-height 1em
+  :background $COLOR_MAIN
+  :color #FFF
+  :font-weight bold
+  &:HOVER
+    :background lighten($COLOR_MAIN, 15%)
+  &:ACTIVE
+    :background darken($COLOR_MAIN, 15%)
+
+/*-------------------------------------------------------------------------
+/* Components
+/*-------------------------------------------------------------------------
+
+/*-------------------------------------------------------------------------
+/* Components Instances
+/*-------------------------------------------------------------------------

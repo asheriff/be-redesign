@@ -1,0 +1,7 @@
+- if Ramaze.options.mode == :dev
+  %link{ :rel=>:stylesheet, :type=>"text/css", :href=>"/css/debug" }
+  
+  %section.debug
+    %h2 Debug
+    %pre
+      =h request.to_yaml
