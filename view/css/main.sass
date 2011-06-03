@@ -1,6 +1,9 @@
 //-------------------------------------------------------------------------
 // Dimensions
 //-------------------------------------------------------------------------
+$SITE_WIDTH: 900px
+$HEADER_HEIGHT: 100px
+$MAIN_TOP_OFFSET: 8px
 
 //-------------------------------------------------------------------------
 // Colors & fonts
@@ -8,7 +11,7 @@
 $COLOR_MAIN: red
 
 $FONT: Helvetica, Arial, sans-serif
-$FONT_HEADINGS: "Arial Narrow", $FONT
+$FONT_HEADINGS: $FONT
 
 //-------------------------------------------------------------------------
 // Mixins
@@ -33,6 +36,7 @@ $FONT_HEADINGS: "Arial Narrow", $FONT
 /*-------------------------------------------------------------------------
 *
   :-moz-box-sizing border-box
+  :box-sizing border-box
 
 BODY
   :margin 0
@@ -56,12 +60,19 @@ NAV
 /* Typography
 /*-------------------------------------------------------------------------
 BODY
-  :font 75%/1.2em $FONT
+  :font-size 75%
+  :font-family $FONT
   :color #333
 
 PRE, CODE, TT, KBD
   :font-family 'Courier New' Courier monospace
   :font-size 1.2em
+
+H1
+  :margin 30px 0 0 20px
+  :font-size 18px
+  :font-weight normal
+  :color #FFF
 
 H1, H2
   :font-family $FONT_HEADINGS
@@ -81,8 +92,65 @@ HR
   :display none
 
 /*-------------------------------------------------------------------------
+/* Page Backgrounds
+/*-------------------------------------------------------------------------
+BODY
+  :background #89D5E5 
+
+.Main
+  :background url(/img/main_bg.jpg) no-repeat center (-$MAIN_TOP_OFFSET)
+
+.MainWrapper
+  :background #D3E6EA url(/img/main_wrapper_bg.jpg) no-repeat center 0px
+
+/* The -48px is a magic number that must change if the height of the
+ * .TopPageNav changes. */
+.ContentWrapper
+  :background #8FC2CD url(/img/content_wrapper_bg.jpg) no-repeat center -48px
+
+/*-------------------------------------------------------------------------
 /* Structure
 /*-------------------------------------------------------------------------
+.Header
+  :height $HEADER_HEIGHT
+  :background #CDB358
+  .HeaderWrapper
+    :width $SITE_WIDTH
+    :margin 0 auto
+  .Logo
+    :display inline-block
+    :width 360px
+    +border-radius( 0 0 10px 10px )
+    :background #F0F4F6
+    :padding 10px 10px 0 20px
+    A
+      :text-decoration none
+
+.Main
+  :border-top $MAIN_TOP_OFFSET solid #FFF
+  .MainWrapper
+    :position relative
+    :top -$MAIN_TOP_OFFSET
+    :width $SITE_WIDTH
+    :margin 0 auto
+    :padding 20px
+
+.Content
+  .ContentWrapper
+    +border-radius( 5px )
+    :padding 3em
+    SECTION
+      :border 1px solid #84B3BD
+      +border-radius( 5px )
+      :background #FFF
+      :padding 1em
+      :margin 0 0 2em
+
+.TopPageNav
+  :margin 0 0 1em
+
+.BottomPageNav
+  :margin 1em 0 0
 
 /*-------------------------------------------------------------------------
 /* Icons
