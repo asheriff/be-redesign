@@ -138,11 +138,13 @@ BODY
 .Main
   :border-top $MAIN_TOP_OFFSET solid #FFF
   .MainWrapper
-    :position relative
-    :top -$MAIN_TOP_OFFSET
     :width $SITE_WIDTH
     :margin 0 auto
     :padding 20px
+  > .MainWrapper
+    /* Not IE6
+    :position relative
+    :top -$MAIN_TOP_OFFSET
 
 .Content
   .ContentWrapper

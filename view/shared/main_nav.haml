@@ -4,9 +4,9 @@
     %ul
       - 10.times do |i|
         %li
-          <a href="#">#{Faker::Lorem.words(4).join(" ")}</a>
+          <a href="#item_#{i}">#{Faker::Lorem.words(4).join(" ")}</a>
           - if i%2 == 0
             %ul
               - 3.times do |j|
                 %li
-                  <a href="#">#{Faker::Lorem.words(4).join(" ")}</a>
+                  <a href="#item_#{i}_#{j}">#{Faker::Lorem.words(4).join(" ")}</a>
