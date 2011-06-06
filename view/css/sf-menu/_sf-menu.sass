@@ -1,0 +1,13 @@
+@mixin sf_menu_width($width)
+  UL
+    :width $width
+  
+  LI LI:HOVER,
+  LI LI.sfHover
+    UL
+      :left $width
+  
+  LI LI LI:HOVER,
+  LI LI LI.sfHover
+    UL
+      :left $width
