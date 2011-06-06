@@ -1,4 +1,14 @@
 //-------------------------------------------------------------------------
+// Libraries
+//-------------------------------------------------------------------------
+@import "compass/css3/images"
+
+//-------------------------------------------------------------------------
+// Compass config
+//-------------------------------------------------------------------------
+$experimental-support-for-svg: false
+
+//-------------------------------------------------------------------------
 // Dimensions
 //-------------------------------------------------------------------------
 $SITE_WIDTH: 900px
@@ -9,6 +19,7 @@ $MAIN_TOP_OFFSET: 8px
 // Colors & fonts
 //-------------------------------------------------------------------------
 $COLOR_MAIN: #76BBCA
+$COLOR_HEADER: #D2BB69
 
 $FONT: Helvetica, Arial, sans-serif
 $FONT_HEADINGS: $FONT
@@ -113,7 +124,9 @@ BODY
 /*-------------------------------------------------------------------------
 .Header
   :height $HEADER_HEIGHT
-  :background #CDB358
+  :background $COLOR_HEADER
+  +background-image( linear-gradient( $COLOR_HEADER, darken($COLOR_HEADER,10%) ) )
+  
   .HeaderWrapper
     :width $SITE_WIDTH
     :margin 0 auto
