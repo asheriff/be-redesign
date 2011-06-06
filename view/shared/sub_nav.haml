@@ -8,6 +8,6 @@
   %li
     %a{ :href=>"" } BSA Basics
     %ul
-      - links.each do |link|
+      - links.each_with_index do |link, i|
         %li
-          %a{ :href=>"#" } #{link}
+          %a{ :href=>"#foo_#{i}" } #{link}
