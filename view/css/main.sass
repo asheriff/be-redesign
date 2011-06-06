@@ -148,6 +148,10 @@ BODY
     :position relative
     :z-index 1
 
+#SubNav
+  :position relative
+  :top -44px
+
 .Main
   :border-top $MAIN_TOP_OFFSET solid #FFF
   .MainWrapper
@@ -217,11 +221,14 @@ BODY
 /*-------------------------------------------------------------------------
 /* Components
 /*-------------------------------------------------------------------------
-.section_nav
+.page_nav
   :padding 10px
   :background #B2E6F2
   +border-radius( 10px )
   :float right
+
+.sub_nav
+  :border 1px solid red
 
 /*-------------------------------------------------------------------------
 /* Components Instances

@@ -1,0 +1,55 @@
+/*-------------------------------------------------------------------------
+/* Superfish, skin for right flyout menu
+/*-------------------------------------------------------------------------
+@import "compass/css3"
+@import "sf-menu/_sf-menu"
+
+$SF_WIDTH: 280px
+$SF_COLOR_MAIN: #66AAB9
+$SF_BORDER_RADIUS: 6px
+
+
+.sf-skin-sub-nav, .sf-skin-sub-nav UL
+  :background $SF_COLOR_MAIN
+  +border-radius( $SF_BORDER_RADIUS )
+
+UL.sf-skin-sub-nav
+  :float left
+  
+  A
+    :padding .75em 1em
+    :text-decoration none
+    :color #FFF
+  
+  LI
+    width: $SF_WIDTH
+    LI:HOVER,
+    LI.sfHover
+      :background $SF_COLOR_MAIN
+    &:HOVER, &.sfHover
+      UL
+        :top 2.2em
+  
+  // TODO: Figure out opacity in a way that doesn't break IE.
+  LI > UL
+    +opacity(.96)
+    UL
+      +opacity(1)
+  
+  UL
+    :background lighten( $SF_COLOR_MAIN, 10% )
+    +box-shadow( desaturate($SF_COLOR_MAIN, 30%) 5px 5px 20px )
+    +border-radius( 0 0 $SF_BORDER_RADIUS $SF_BORDER_RADIUS )
+    LI.first
+      +border-radius( $SF_BORDER_RADIUS $SF_BORDER_RADIUS 0 0 )
+    LI.last
+      +border-radius( 0 0 $SF_BORDER_RADIUS $SF_BORDER_RADIUS )
+    A
+      :border-bottom
+        :width 1px
+        :style solid
+        :color $SF_COLOR_MAIN
+    A.last
+      :border none
+
+  +sf_menu_width( $SF_WIDTH )

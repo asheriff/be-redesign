@@ -1,0 +1,13 @@
+- links = []
+- links << "Overview"
+- links << "What is BSA"
+- links << "Penalties"
+- 5.times{ links << Faker::Lorem.words(3).join(" ") }
+
+%ul.sf-menu.sf-skin-sub-nav
+  %li
+    %a{ :href=>"" } BSA Basics
+    %ul
+      - links.each do |link|
+        %li
+          %a{ :href=>"#" } #{link}
