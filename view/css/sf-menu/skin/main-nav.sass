@@ -24,8 +24,10 @@ $SF_BORDER_RADIUS: 6px
       :background $SF_COLOR_MAIN
   
   // TODO: Figure out opacity in a way that doesn't break IE.
-  XXX > LI > UL
+  LI > UL
     +opacity(.9)
+    UL
+      +opacity(1)
   
   UL
     :background lighten( $SF_COLOR_MAIN, 10% )
