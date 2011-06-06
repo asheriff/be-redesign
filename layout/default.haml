@@ -21,6 +21,19 @@
           %a{ :href=>"/" }
             %img{ :src=>"/img/site_logo.gif" }
         %h1 #{@h1 || @title}
+        %nav.MainNav#MainNav
+          %ul.sf-menu.sf-expand-left.sf-skin-main-nav
+            %li
+              %a{ } Main Menu
+              %ul
+                - 10.times do |i|
+                  %li
+                    <a href="#">#{Faker::Lorem.words(4).join(" ")}</a>
+                    - if i%2 == 0
+                      %ul
+                        - 3.times do |j|
+                          %li
+                            <a href="#">#{Faker::Lorem.words(4).join(" ")}</a>
     
     %section.Main#Main
       .MainWrapper
@@ -40,6 +53,8 @@
         %section.BottomPageNav#BottomPageNav
           = render_partial "shared/page_nav"
     
+    %script{ :type=>"text/javascript", :src=>"/js/plugins/jquery.hoverIntent.js" }
+    %script{ :type=>"text/javascript", :src=>"/js/plugins/superfish.js" }
     %script{ :type=>"text/javascript", :src=>"/js/site.js" }
     
     = render_partial "shared/debug_info"

@@ -1,0 +1,41 @@
+/*-------------------------------------------------------------------------
+/* Superfish, skin for right flyout menu
+/*-------------------------------------------------------------------------
+@import "compass/css3"
+
+$SF_COLOR_MAIN: #D01A1A
+$SF_BORDER_RADIUS: 6px
+
+.sf-skin-main-nav, .sf-skin-main-nav UL
+  :background $SF_COLOR_MAIN
+  +border-radius( $SF_BORDER_RADIUS )
+
+.sf-skin-main-nav
+  :float right
+  
+  A
+    :padding .75em 1em
+    :text-decoration none
+    :color #FFF
+  
+  LI
+    LI:HOVER,
+    LI.sfHover
+      :background $SF_COLOR_MAIN
+  
+  > LI > UL
+    +opacity(.9)
+  UL
+    :background lighten( $SF_COLOR_MAIN, 10% )
+    +box-shadow( desaturate($SF_COLOR_MAIN, 30%) 5px 5px 20px )
+    LI.first
+      +border-radius( $SF_BORDER_RADIUS $SF_BORDER_RADIUS 0 0 )
+    LI.last
+      +border-radius( 0 0 $SF_BORDER_RADIUS $SF_BORDER_RADIUS )
+    A
+      :border-bottom
+        :width 1px
+        :style solid
+        :color $SF_COLOR_MAIN
+    A.last
+      :border none

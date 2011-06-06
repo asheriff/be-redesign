@@ -1,0 +1,70 @@
+/*-------------------------------------------------------------------------
+/* Superfish, base styles
+/*-------------------------------------------------------------------------
+$sf_menu_item_width: 200px
+
+.sf-menu, .sf-menu *
+  :margin 0
+  :padding 0
+  :list-style none
+  :position relative
+
+.sf-menu
+  :line-height 1
+  :cursor default
+  
+  A
+    :display block
+    :position relative
+  
+  UL
+    :position absolute
+    :top -999em
+    :width $sf_menu_item_width
+    LI
+      :width 100%
+      &:HOVER
+        :visibility inherit
+  
+  LI
+    :float left
+    :position relative
+    &:HOVER, &.sfHover
+      UL
+        :left 0
+        :top 2.5em
+        :z-index 99
+
+UL.sf-menu
+  LI:HOVER,
+  LI.sfHover
+    LI UL
+      :top -999em
+  
+  LI LI:HOVER,
+  LI LI.sfHover
+    UL
+      :left $sf_menu_item_width
+      :top 0
+    LI UL
+      :top -999em
+  
+  LI LI LI:HOVER,
+  LI LI LI.sfHover
+    UL
+      :left $sf_menu_item_width
+      :top 0
+
+UL.sf-expand-left
+  LI:HOVER,
+  LI.sfHover
+    UL
+      :left auto
+      :right 0
+  LI LI:HOVER,
+  LI LI.sfHover,
+  LI LI LI:HOVER,
+  LI LI LI.sfHover
+    UL
+      :left -($sf_menu_item_width - 4px)
+
