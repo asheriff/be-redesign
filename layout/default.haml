@@ -12,7 +12,7 @@
     %script{ :type=>"text/javascript", :src=>"/js/plugins/jquery.metadata.js" }
     
     %link{ :rel=>:stylesheet, :type=>"text/css", :href=>"/css/main.css" }
-
+  
   %body{ :class=>[page_class] }
     
     %section.Header#Header
@@ -26,6 +26,8 @@
       .MainWrapper
         
         %section.TopPageNav#TopPageNav
+          = render_partial "shared/page_nav"
+          
           %nav
             %ul
               %li
@@ -36,10 +38,7 @@
             = @content
         
         %section.BottomPageNav#BottomPageNav
-          %nav
-            %ul
-              %li
-                %a Basics
+          = render_partial "shared/page_nav"
     
     %script{ :type=>"text/javascript", :src=>"/js/site.js" }
     

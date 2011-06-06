@@ -8,7 +8,7 @@ $MAIN_TOP_OFFSET: 8px
 //-------------------------------------------------------------------------
 // Colors & fonts
 //-------------------------------------------------------------------------
-$COLOR_MAIN: red
+$COLOR_MAIN: #76BBCA
 
 $FONT: Helvetica, Arial, sans-serif
 $FONT_HEADINGS: $FONT
@@ -147,9 +147,11 @@ BODY
       :margin 0 0 2em
 
 .TopPageNav
+  +clearfix
   :margin 0 0 1em
 
 .BottomPageNav
+  +clearfix
   :margin 1em 0 0
 
 /*-------------------------------------------------------------------------
@@ -162,21 +164,40 @@ BODY
 /*-------------------------------------------------------------------------
 /* Buttons
 /*-------------------------------------------------------------------------
-.button
-  :padding .3em 1.2em
-  +border-radius(1em)
-  :line-height 1em
+.button, BUTTON, INPUT[type=submit], INPUT[type=button]
+  :width auto
+  :overflow visible
+  :margin 0 .2em 0 0
+  :padding .1em 1em
+  :vertical-align baseline
+  :font-size 1.1em
+  :line-height 1.4em
+  :font-weight normal
   :background $COLOR_MAIN
+  :border 1px solid #FFF
+  +border-radius(5px)
   :color #FFF
-  :font-weight bold
+  :text-decoration none
   &:HOVER
     :background lighten($COLOR_MAIN, 15%)
   &:ACTIVE
     :background darken($COLOR_MAIN, 15%)
 
+.button
+  :padding .2em 1em
+  .ie7 &
+    :position relative
+    :top -.15em
+    :padding .2em 1em
+
 /*-------------------------------------------------------------------------
 /* Components
 /*-------------------------------------------------------------------------
+.section_nav
+  :padding 10px
+  :background #B2E6F2
+  +border-radius( 10px )
+  :float right
 
 /*-------------------------------------------------------------------------
 /* Components Instances
