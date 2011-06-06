@@ -14,8 +14,8 @@
   "use strict";
   
   $(document).ready(function(){
-    $('ul.sf-menu LI:FIRST-CHILD, ul.sf-menu LI:FIRST-CHILD>A').addClass("first");
-    $('ul.sf-menu LI:LAST-CHILD, ul.sf-menu LI:LAST-CHILD>A').addClass("last");
+    $('ul.sf-menu LI:first-child, ul.sf-menu LI:first-child>A').addClass("first");
+    $('ul.sf-menu LI:last-child, ul.sf-menu LI:last-child>A').addClass("last");
     $("UL.sf-menu").superfish();
   });
 })(jQuery);
