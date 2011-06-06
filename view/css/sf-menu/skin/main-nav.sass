@@ -23,8 +23,10 @@ $SF_BORDER_RADIUS: 6px
     LI.sfHover
       :background $SF_COLOR_MAIN
   
-  > LI > UL
+  // TODO: Figure out opacity in a way that doesn't break IE.
+  XXX > LI > UL
     +opacity(.9)
+  
   UL
     :background lighten( $SF_COLOR_MAIN, 10% )
     +box-shadow( desaturate($SF_COLOR_MAIN, 30%) 5px 5px 20px )
