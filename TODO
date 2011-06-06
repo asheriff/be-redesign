@@ -1,1 +1,4 @@
 Move routes.rb out of controllers/
+Fix no hoverintent in IE
+Added arrows to mainnav
+Fixed background image alignments
