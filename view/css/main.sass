@@ -126,6 +126,15 @@ BODY
     A
       :text-decoration none
 
+#MainNav
+  :margin-top -40px
+  :float right
+  
+  .lte7 &
+    /* IE7: Fix issue where sf-menu is under other elements.
+    :position relative
+    :z-index 1
+
 .Main
   :border-top $MAIN_TOP_OFFSET solid #FFF
   .MainWrapper
@@ -197,10 +206,6 @@ BODY
   :padding 10px
   :background #B2E6F2
   +border-radius( 10px )
-  :float right
-
-#MainNav
-  :margin-top -40px
   :float right
 
 /*-------------------------------------------------------------------------
