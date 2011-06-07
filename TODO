@@ -1,7 +1,5 @@
-Move routes.rb out of controllers/
-Fix no hoverintent in IE
-Added arrows to mainnav
-Fixed background image alignments
+IE6 Fixed background image alignments
 IE6 mainnav no border when linewrap
 IEx Header gradient
 IE6 fix mainnav hover icon
+IE6-8 logo bottom radius
