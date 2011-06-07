@@ -4,13 +4,19 @@
   .col.grid_12
     %section
       %h2 #{Faker::Lorem.sentence(2)}
-      %p #{Faker::Lorem.paragraph}
+      .content_img.aligned_right
+        %img{ :src=>"/img/content/man.jpg" }
+      :markdown
+        #{Faker::Lorem.paragraphs(3) * "\n\n"}
 
 .row
   .col.grid_8
     %section
       %h3 Top Row
-      %p #{Faker::Lorem.paragraph}
+      .content_img.aligned_right
+        %img{ :src=>"/img/content/woman.jpg" }
+      :markdown
+        #{Faker::Lorem.paragraphs(3) * "\n\n"}
     .row
       .col.grid_4
         %section

@@ -120,7 +120,18 @@ HR
 
 .hidden
   :display none
+  
+/*-------------------------------------------------------------------------
+/* Display
+/*-------------------------------------------------------------------------
+.aligned_left
+  :float left
+  :margin 0 1em 1em 0
 
+.aligned_right
+  :float right
+  :margin 0 0 1em 1em
+  
 /*-------------------------------------------------------------------------
 /* Page Backgrounds
 /*-------------------------------------------------------------------------
@@ -212,6 +223,7 @@ BODY
     +border-radius( 5px )
     :padding 0
     SECTION
+      +clearfix
       :border 1px solid #84B3BD
       +border-radius( 5px )
       :background #FFF
@@ -260,6 +272,13 @@ INPUT[type=submit], INPUT[type=button]
 
 .sub_nav
   :border 1px solid red
+
+.content_img
+  :line-height 1px
+  :display inline
+  :padding 5px
+  :border 1px solid desaturate( $COLOR_MAIN, 55% )
+  +border-radius(5px)
 
 /*-------------------------------------------------------------------------
 /* Components Instances
