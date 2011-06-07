@@ -8,6 +8,8 @@
         %img{ :src=>"/img/content/man.jpg" }
       :markdown
         #{Faker::Lorem.paragraphs(3) * "\n\n"}
+      %p
+        %a.button.call_to_action.icon.icon_arrow{ :href=>"#"} Quiz
 
 .row
   .col.grid_8
@@ -29,7 +31,8 @@
   .col.grid_4
     %section
       %h3 Right Col
-      %p #{Faker::Lorem.paragraph}
+      :markdown
+        #{Faker::Lorem.paragraphs(3) * "\n\n"}
 
 .row
   .col.grid_12
