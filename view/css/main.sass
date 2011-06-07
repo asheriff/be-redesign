@@ -2,6 +2,7 @@
 // Libraries
 //-------------------------------------------------------------------------
 @import "compass/css3/images"
+@import "lib/_buttons"
 
 //-------------------------------------------------------------------------
 // Compass config
@@ -192,24 +193,11 @@ BODY
 /*-------------------------------------------------------------------------
 /* Buttons
 /*-------------------------------------------------------------------------
-.button, BUTTON, INPUT[type=submit], INPUT[type=button]
-  :width auto
-  :overflow visible
-  :margin 0 .2em 0 0
-  :padding .1em 1em
-  :vertical-align baseline
-  :font-size 1.1em
-  :line-height 1.4em
-  :font-weight normal
-  :background $COLOR_MAIN
-  :border 1px solid #FFF
-  +border-radius(5px)
-  :color #FFF
-  :text-decoration none
-  &:HOVER
-    :background lighten($COLOR_MAIN, 15%)
-  &:ACTIVE
-    :background darken($COLOR_MAIN, 15%)
+.button, BUTTON
+  +button
+
+INPUT[type=submit], INPUT[type=button]
+  +button
 
 .button
   :padding .2em 1em
