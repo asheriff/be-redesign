@@ -1,13 +1,15 @@
 //-------------------------------------------------------------------------
 // Libraries
 //-------------------------------------------------------------------------
-@import "compass/css3/images"
+@import "compass/utilities/general"
+@import "compass/css3"
 @import "lib/_buttons"
 
 //-------------------------------------------------------------------------
 // Compass config
 //-------------------------------------------------------------------------
 $experimental-support-for-svg: false
+$default-has-layout-approach: zoom
 
 //-------------------------------------------------------------------------
 // Dimensions
@@ -35,20 +37,6 @@ $FONT_HEADINGS: $FONT
 //-------------------------------------------------------------------------
 // Mixins
 //-------------------------------------------------------------------------
-=clearfix
-  :overflow hidden
-  :display inline-block
-  &
-    :display block
-
-// TODO: use compass lib for css3 features
-=border-radius($radius)
-  :-webkit-border-radius $radius
-  :-moz-border-radius $radius
-  :-o-border-radius $radius
-  :-ms-border-radius $radius
-  :-khtml-border-radius $radius
-  :border-radius $radius
 
 /*-------------------------------------------------------------------------
 /* General
