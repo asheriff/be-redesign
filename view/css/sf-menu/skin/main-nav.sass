@@ -20,12 +20,19 @@ $SF_BORDER_RADIUS: 6px
     :font-weight bold
   LI LI
     A
+      :padding-left 30px
       :font-weight normal
   
   LI
     LI:HOVER,
     LI.sfHover
       :background $SF_COLOR_MAIN
+      A:HOVER
+        :background url(/img/icons/arrow.gif) no-repeat 6px 50%
+      > A:HOVER
+        :background-image url(/img/icons/arrow.png)
+  
+  
   
   // TODO: Figure out opacity in a way that doesn't break IE.
   LI > UL
