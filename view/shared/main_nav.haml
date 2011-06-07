@@ -4,7 +4,9 @@
     %ul
       - 10.times do |i|
         %li
-          <a href="#item_#{i}">#{Faker::Lorem.words(4).join(" ")}</a>
+          - href = i%2 != 0 ? "#item_#{i}" : nil
+          %a{ :href=>href }
+            #{Faker::Lorem.words(4).join(" ")}
           - if i%2 == 0
             %ul
               - 3.times do |j|
