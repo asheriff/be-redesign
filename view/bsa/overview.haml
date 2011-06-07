@@ -1,11 +1,32 @@
 - @title = "Bank Secrecy Act (BSA)"
 
-%section
-  %h2 #{Faker::Lorem.sentence(2)}
-  %p #{Faker::Lorem.paragraph}
-%section
-  %h2 #{Faker::Lorem.sentence(2)}
-  %p #{Faker::Lorem.paragraph}
-%section
-  %h2 #{Faker::Lorem.sentence(2)}
-  %p #{Faker::Lorem.paragraphs(1)}
+.row
+  .col.grid_12
+    %section
+      %h2 #{Faker::Lorem.sentence(2)}
+      %p #{Faker::Lorem.paragraph}
+
+.row
+  .col.grid_8
+    %section
+      %h2 Top Row
+      %p #{Faker::Lorem.paragraph}
+    .row
+      .col.grid_4
+        %section
+          %h2 Row 2 Cell 1
+          %p #{Faker::Lorem.paragraph}
+      .col.grid_4
+        %section
+          %h2 Row 2 Cell 2
+          %p #{Faker::Lorem.paragraph}
+  .col.grid_4
+    %section
+      %h2 Right Col
+      %p #{Faker::Lorem.paragraph}
+
+.row
+  .col.grid_12
+    %section
+      %h2 #{Faker::Lorem.sentence(2)}
+      %p #{Faker::Lorem.paragraph}

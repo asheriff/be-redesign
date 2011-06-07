@@ -12,9 +12,15 @@ $experimental-support-for-svg: false
 //-------------------------------------------------------------------------
 // Dimensions
 //-------------------------------------------------------------------------
-$SITE_WIDTH: 900px
+$SITE_WIDTH: 960px
 $HEADER_HEIGHT: 100px
 $MAIN_TOP_OFFSET: 8px
+
+$GRID_ROWS: 12
+$GRID_WIDTH: 900px
+$GRID_MARGIN: 15px
+
+$GRID_CELL_WIDTH: $GRID_WIDTH / $GRID_ROWS
 
 //-------------------------------------------------------------------------
 // Colors & fonts
@@ -121,6 +127,29 @@ BODY
   :background #8FC2CD url(/img/content_wrapper_bg.jpg) no-repeat center -70px
 
 /*-------------------------------------------------------------------------
+/* Grid
+/*-------------------------------------------------------------------------
+@for $i from 1 through $GRID_ROWS
+  .grid_#{$i}
+    :width ($i * $GRID_CELL_WIDTH) - (2 * $GRID_MARGIN)
+
+.col
+  :margin 0 $GRID_MARGIN
+  :overflow hidden
+  :float left
+  :display inline
+
+.row
+  +clearfix
+  :width $GRID_WIDTH
+  :margin (2 * $GRID_MARGIN) auto
+
+.row .row
+  :margin (2 * $GRID_MARGIN) (-$GRID_MARGIN) 0
+  :width auto
+  :display inline-block
+
+/*-------------------------------------------------------------------------
 /* Structure
 /*-------------------------------------------------------------------------
 .Header
@@ -165,21 +194,23 @@ BODY
     :top -$MAIN_TOP_OFFSET
 
 .Content
+  :clear both
   .ContentWrapper
+    +clearfix
     +border-radius( 5px )
-    :padding 3em
+    :padding 0
     SECTION
       :border 1px solid #84B3BD
       +border-radius( 5px )
       :background #FFF
       :padding 1em
-      :margin 0 0 2em
 
 .TopPageNav
   +clearfix
   :margin 0 0 1em
 
 .BottomPageNav
+  :clear both
   +clearfix
   :margin 1em 0 0
 
