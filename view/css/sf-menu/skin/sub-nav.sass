@@ -8,7 +8,6 @@ $SF_WIDTH: 280px
 $SF_COLOR_MAIN: #66AAB9
 $SF_BORDER_RADIUS: 6px
 
-
 .sf-skin-sub-nav, .sf-skin-sub-nav UL
   :background $SF_COLOR_MAIN
   +border-radius( $SF_BORDER_RADIUS )
@@ -22,13 +21,20 @@ UL.sf-skin-sub-nav
     :color #FFF
   
   LI
-    width: $SF_WIDTH
+    :width $SF_WIDTH
     LI:HOVER,
     LI.sfHover
       :background $SF_COLOR_MAIN
     &:HOVER, &.sfHover
       UL
         :top 2.2em
+  
+  LI
+    :background url(/img/icons/plus.gif) no-repeat #{$SF_WIDTH - 28px} 50%
+    LI
+      :background-image none
+  > LI
+    :background-image url(/img/icons/plus.png)
   
   // TODO: Figure out opacity in a way that doesn't break IE.
   LI > UL
