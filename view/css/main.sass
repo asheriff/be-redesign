@@ -26,7 +26,8 @@ $GRID_CELL_WIDTH: $GRID_WIDTH / $GRID_ROWS
 // Colors & fonts
 //-------------------------------------------------------------------------
 $COLOR_MAIN: #76BBCA
-$COLOR_HEADER: #D2BB69
+$COLOR_ACCENT: #BEA655
+$COLOR_HEADER: lighten( $COLOR_ACCENT, 10% )
 
 $FONT: Helvetica, Arial, sans-serif
 $FONT_HEADINGS: $FONT
@@ -92,8 +93,19 @@ H1
   :font-weight normal
   :color #FFF
 
-H1, H2
+H2
+  :margin 0 0 10px
+  :font-size 22px
+
+H3
+  :margin 0 0 10px
+  :font-size 18px
+
+H1, H2, H3
   :font-family $FONT_HEADINGS
+
+H2, H3, H4
+  :color $COLOR_ACCENT
 
 P, UL, OL, DL
   :margin 1.4em 0
@@ -203,7 +215,7 @@ BODY
       :border 1px solid #84B3BD
       +border-radius( 5px )
       :background #FFF
-      :padding 1em
+      :padding 1em 2em
 
 .TopPageNav
   +clearfix
