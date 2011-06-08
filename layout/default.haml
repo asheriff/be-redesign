@@ -18,14 +18,15 @@
   
   %body{ :class=>[page_class] }
     
-    %section.Header#Header
+    %header.Header#Header
       .HeaderWrapper
         .Logo#Logo
           %a{ :href=>"/" }
             %img{ :src=>"/img/site_logo.gif" }
-        %h1 #{@h1 || @title}
-        %nav.MainNav#MainNav
-          = render_partial "shared/main_nav"
+        %section.TitleBar
+          %h1 #{@h1 || @title}
+          %nav.MainNav#MainNav
+            = render_partial "shared/main_nav"
     
     %section.Main#Main
       .MainWrapper
