@@ -1,4 +1,4 @@
-@mixin button
+@mixin button($background_color)
   :width auto
   :overflow visible
   :margin 0 .2em 0 0
@@ -7,12 +7,12 @@
   :font-size 1.1em
   :line-height 1.4em
   :font-weight normal
-  :background $COLOR_MAIN
+  :background $background_color
   :border 1px solid #FFF
   +border-radius(5px)
   :color #FFF
   :text-decoration none
   &:HOVER
-    :background-color lighten($COLOR_MAIN, 15%)
+    :background-color lighten($background_color, 15%)
   &:ACTIVE
-    :background-color darken($COLOR_MAIN, 15%)
+    :background-color darken($background_color, 15%)
