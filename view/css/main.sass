@@ -29,7 +29,9 @@ $GRID_CELL_WIDTH: $GRID_WIDTH / $GRID_ROWS
 //-------------------------------------------------------------------------
 $COLOR_MAIN: #76BBCA
 $COLOR_ACCENT: #BEA655
-$COLOR_HEADER: lighten( $COLOR_ACCENT, 10% )
+$COLOR_HEADER: #F0F5F6
+$COLOR_TITLEBAR: #96ADB7
+$COLOR_BUTTONS: lighten( $COLOR_MAIN, 10% )
 
 $FONT: Helvetica, Arial, sans-serif
 $FONT_HEADINGS: $FONT
@@ -76,7 +78,7 @@ PRE, CODE, TT, KBD
   :font-size 1.2em
 
 H1
-  :margin 30px 0 0 20px
+  :margin 10px 0
   :font-size 18px
   :font-weight normal
   :color #FFF
@@ -93,7 +95,7 @@ H1, H2, H3
   :font-family $FONT_HEADINGS
 
 H2, H3, H4
-  :color $COLOR_ACCENT
+  :color #A0C0C2
 
 P, UL, OL, DL
   :margin 1.4em 0
@@ -124,18 +126,24 @@ HR
 /* Page Backgrounds
 /*-------------------------------------------------------------------------
 BODY
-  :background #89D5E5 
+  :background #8C9394
+
+.Header
+  :background $COLOR_HEADER url(/img/header_bg.jpg) no-repeat center bottom
+
+.TitleBar
+  :background $COLOR_TITLEBAR url(/img/titlebar_bg.jpg) no-repeat center top
 
 .Main
-  :background url(/img/main_bg.jpg) no-repeat center (-$MAIN_TOP_OFFSET)
+  :background url(/img/main_bg.jpg) no-repeat center 0px
 
 .MainWrapper
-  :background #D3E6EA url(/img/main_wrapper_bg.jpg) no-repeat center 0px
+  :background #F8FAFB
 
 /* The -48px is a magic number that must change if the height of the
  * .TopPageNav changes. */
 .ContentWrapper
-  :background #8FC2CD url(/img/content_wrapper_bg.jpg) no-repeat center -74px
+  :background #E9E8E5 url(/img/content_wrapper_bg.jpg) no-repeat center -74px
 
 /*-------------------------------------------------------------------------
 /* Grid
@@ -164,25 +172,22 @@ BODY
 /* Structure
 /*-------------------------------------------------------------------------
 .Header
-  :height $HEADER_HEIGHT
-  :background $COLOR_HEADER
-  +background-image( linear-gradient( $COLOR_HEADER, darken($COLOR_HEADER,10%) ) )
   
   .HeaderWrapper
     :width $SITE_WIDTH
     :margin 0 auto
   .Logo
-    :display inline-block
-    :width 360px
-    +border-radius( 0 0 10px 10px )
-    :background #F0F4F6
-    :padding 10px 10px 0 20px
+    :padding 10px 0
+    :text-align right
     A
       :text-decoration none
 
+.TitleBar
+  :padding 6px 15px 6px 30px
+  +border-radius( 5px )
+
 #MainNav
-  :margin-top -40px
-  :float right
+  :margin -35px 0 45px
   
   .lte7 &
     /* IE7: Fix issue where sf-menu is under other elements.
@@ -193,15 +198,12 @@ BODY
   :margin-top -44px
 
 .Main
-  :border-top $MAIN_TOP_OFFSET solid #FFF
+  :border-top 4px solid #FFF
+  :margin-bottom 1em
   .MainWrapper
     :width $SITE_WIDTH
     :margin 0 auto
     :padding 20px 20px 10px
-  > .MainWrapper
-    /* Not IE6
-    :position relative
-    :top -$MAIN_TOP_OFFSET
 
 .Content
   :clear both
@@ -212,9 +214,9 @@ BODY
     :padding 0
     SECTION
       +clearfix
-      :border 1px solid #84B3BD
+      :border 1px solid #DBDBD8
       +border-radius( 5px )
-      :background #FFF
+      :background #F8FDFF
       :padding 1em 2em
 
 .TopPageNav
@@ -266,15 +268,13 @@ INPUT[type=submit], INPUT[type=button]
 /*-------------------------------------------------------------------------
 .page_nav
   :padding 10px
-  :background #B2E6F2
-  +border-radius( 10px )
   :float right
 
 .content_img
   :line-height 1px
   :display inline
   :padding 5px
-  :border 1px solid desaturate( $COLOR_MAIN, 55% )
+  :border 1px solid #DBDBD8
   +border-radius(5px)
 
 /*-------------------------------------------------------------------------
