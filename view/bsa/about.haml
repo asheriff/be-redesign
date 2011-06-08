@@ -2,4 +2,9 @@
 
 %section
   %h2 #{Faker::Lorem.sentence(2)}
-  %p #{Faker::Lorem.paragraph}
+  .content_img.aligned_right
+    %img{ :src=>"/img/content/man.jpg" }
+  :markdown
+    #{Faker::Lorem.paragraphs(3) * "\n\n"}
+  %p
+    %a.button.call_to_action.icon.icon_arrow{ :href=>"#"} Quiz
