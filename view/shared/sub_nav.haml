@@ -9,6 +9,7 @@
 
 %ul.kwicks-menu
   - links.each_with_index do |link, i|
-    - css_class = i==@selected_index ? :selected : nil
-    %li{ :class=>css_class }
+    - css_selected = i==@selected_index ? :selected : nil
+    - css_postition = i == 0 ? :first : link == links.last ? :last : nil
+    %li{ :class=>[css_selected, css_postition] }
       %a{ :href=>route(:bsa, :basics, i) } #{link}
