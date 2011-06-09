@@ -1,0 +1,68 @@
+/*-------------------------------------------------------------------------
+/* Kwicks
+/*-------------------------------------------------------------------------
+@import "compass/css3"
+
+$KWICKS_COLOR: #BFCB97
+$KWICKS_HEIGHT: 64px
+$KWICKS_RADIUS: 7px
+
+.SubNav
+  :padding 0 $KWICKS_RADIUS
+  :border 1px solid #DBDBD8
+  +border-radius( 7px )
+
+.SubNav,
+.kwicks-menu A,
+.kwicks-menu LI.selected
+  :background $KWICKS_COLOR url(/img/components/twicks_slider/bg.png) repeat-x 0 0
+
+.kwicks-menu
+  :width 100%
+  :height $KWICKS_HEIGHT
+  :position relative
+  :list-style none
+  :margin 0
+  :padding 0
+
+  LI, A
+    :height $KWICKS_HEIGHT
+  
+  A
+    :display block
+    :color #FFF
+    :text-decoration none
+    :line-height $KWICKS_HEIGHT - 22px
+    :padding 10px
+    :border-right 2px solid #FFF
+    &:HOVER
+      :background-color darken( $KWICKS_COLOR, 10% )
+  
+  LI
+    :float left
+    :display block
+    :overflow hidden
+    :margin 0
+    :padding 0
+    :white-space nowrap
+    :background #FFF
+  
+  LI
+    &.selected
+      A
+        :color $KWICKS_COLOR
+        :background #FFF
+        :border none
+        +border-radius( $KWICKS_RADIUS $KWICKS_RADIUS 0 0 )
+    
+    &.before_selected
+      A
+        :border-right none
+        +border-radius( 0 0 $KWICKS_RADIUS 0)
+    
+    &.after_selected
+      A
+        +border-radius( 0 0 0 $KWICKS_RADIUS )
+    
+    &:LAST-CHILD A
+      :border-right none

@@ -2,12 +2,13 @@
 - links << "Overview"
 - links << "What is BSA"
 - links << "Penalties"
-- 5.times{ links << Faker::Lorem.words(3).join(" ") }
+- 4.times{ links << Faker::Lorem.words(3).join(" ") }
+- links << "Last Item In List"
 
-%ul.sf-menu.sf-skin-sub-nav
-  %li
-    %a BSA Basics
-    %ul
-      - links.each_with_index do |link, i|
-        %li
-          %a{ :href=>"#foo_#{i}" } #{link}
+- @selected_index ||= 0
+
+%ul.kwicks-menu
+  - links.each_with_index do |link, i|
+    - css_class = i==@selected_index ? :selected : nil
+    %li{ :class=>css_class }
+      %a{ :href=>route(:bsa, :basics, i) } #{link}
