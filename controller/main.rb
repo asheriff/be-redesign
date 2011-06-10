@@ -1,5 +1,6 @@
 class MainController < Controller
   def index
+    @subnav = nil
   end
   
   def bsa__about(index=0)

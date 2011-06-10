@@ -35,8 +35,9 @@
         %section.TopPageNav#TopPageNav
           = render_partial "shared/page_nav"
         
-        %nav.SubNav#SubNav
-          = render_partial "shared/sub_nav"
+        - if @subnav
+          %nav.SubNav#SubNav
+            = render_partial "shared/sub_nav"
         
         %section.Content#Content
           .ContentWrapper

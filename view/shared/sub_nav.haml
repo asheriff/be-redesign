@@ -1,8 +1,9 @@
 - @selected_index ||= 0
 
-%ul.kwicks-menu
-  - @subnav.each_with_index do |link, i|
-    - css_selected = i==@selected_index ? :selected : nil
-    - css_postition = i == 0 ? :first : link == @subnav.last ? :last : nil
-    %li{ :class=>[css_selected, css_postition] }
-      %a{ :href=>route(@page, i) } #{link}
+- if @subnav
+  %ul.kwicks-menu
+    - @subnav.each_with_index do |link, i|
+      - css_selected = i==@selected_index ? :selected : nil
+      - css_postition = i == 0 ? :first : link == @subnav.last ? :last : nil
+      %li{ :class=>[css_selected, css_postition] }
+        %a{ :href=>route(@page, i) } #{link}
