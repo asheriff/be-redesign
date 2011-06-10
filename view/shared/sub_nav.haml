@@ -1,15 +1,8 @@
-- links = []
-- links << "Overview"
-- links << "What is BSA"
-- links << "Penalties"
-- 4.times{ links << Faker::Lorem.words(3).join(" ") }
-- links << "Last Item In List"
-
 - @selected_index ||= 0
 
 %ul.kwicks-menu
-  - links.each_with_index do |link, i|
+  - @subnav.each_with_index do |link, i|
     - css_selected = i==@selected_index ? :selected : nil
-    - css_postition = i == 0 ? :first : link == links.last ? :last : nil
+    - css_postition = i == 0 ? :first : link == @subnav.last ? :last : nil
     %li{ :class=>[css_selected, css_postition] }
-      %a{ :href=>route(:bsa, :basics, i) } #{link}
+      %a{ :href=>route(@page, i) } #{link}
