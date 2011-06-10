@@ -47,9 +47,6 @@ $FONT_HEADINGS: $FONT
   :-moz-box-sizing border-box
   :box-sizing border-box
 
-BODY
-  :margin 0
-
 IMG
   :border none
 
@@ -171,6 +168,10 @@ BODY
 /*-------------------------------------------------------------------------
 /* Structure
 /*-------------------------------------------------------------------------
+BODY
+  :margin 0
+  :padding 0 0 2em
+
 .Header
   
   .HeaderWrapper
@@ -183,13 +184,14 @@ BODY
       :text-decoration none
 
 .TitleBar
-  :padding 6px 15px 6px 30px
+  :padding 6px 20px
   +border-radius( 5px )
 
 #MainNav
   :margin -35px 0 45px
   
   .lte7 &
+    :margin -32px 0 65px
     /* IE7: Fix issue where sf-menu is under other elements.
     :position relative
     :z-index 1
@@ -198,11 +200,13 @@ BODY
 
 .Main
   :border-top 4px solid #FFF
-  :margin-bottom 1em
+  
   .MainWrapper
-    :width $SITE_WIDTH
     :margin 0 auto
     :padding 20px 20px 10px
+    :width $SITE_WIDTH
+    .ie7 &
+      :width $SITE_WIDTH - 40px
 
 .Content
   :clear both
@@ -225,7 +229,9 @@ BODY
 .BottomPageNav
   :clear both
   +clearfix
-  :margin 1em 0 0
+  :margin 10px 0 0
+  .ie7 &
+    :margin -10px 0 20px
 
 /*-------------------------------------------------------------------------
 /* Buttons
