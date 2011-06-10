@@ -20,8 +20,10 @@ $KWICKS_RADIUS: 7px
     :background-image none
 
 .kwicks-menu
+  :white-space nowrap
   :width 100%
   :height $KWICKS_HEIGHT
+  :overflow hidden
   :position relative
   :list-style none
   :margin 0
@@ -34,11 +36,13 @@ $KWICKS_RADIUS: 7px
     :display block
     :color #FFF
     :text-decoration none
-    :line-height $KWICKS_HEIGHT - 22px
-    :padding 10px
+    :line-height $KWICKS_HEIGHT
     :border-right 2px solid #FFF
     &:HOVER
       :background-color darken( $KWICKS_COLOR, 10% )
+  
+  A EM
+    :padding 0 10px
   
   LI
     :float left
